@@ -1,0 +1,13 @@
+{
+  "data_dir": "data/raw",
+  "output_dir": "models",
+  "val_weeks": 6,
+  "seed": 10,
+  "eta": 0.03,
+  "max_depth": 10,
+  "subsample": 0.9,
+  "colsample_bytree": 0.7,
+  "num_boost_round": 6000,
+  "early_stopping_rounds": 100,
+  "verbosity": 1
+}
