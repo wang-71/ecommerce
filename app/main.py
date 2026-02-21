@@ -1,34 +1,3 @@
-# from fastapi import FastAPI
-# import pandas as pd
-# from pathlib import Path
-
-# from app.schemas import PredictRequest, PredictResponse
-# from src.inference import load_bundle, predict_sales
-
-# app = FastAPI(title="Rossmann Sales Forecast API", version="0.1")
-
-# BUNDLE = None
-
-# BASE_DIR = Path(__file__).resolve().parents[1]  # project root
-
-# @app.on_event("startup")
-# def startup():
-#     global BUNDLE
-#     BUNDLE = load_bundle(
-#         model_dir=str(BASE_DIR / "models"),
-#         data_dir=str(BASE_DIR / "data" / "raw"),
-#     )
-
-# @app.get("/health")
-# def health():
-#     return {"status": "ok"}
-
-# @app.post("/predict", response_model=PredictResponse)
-# def predict(req: PredictRequest):
-#     df = pd.DataFrame([r.model_dump() for r in req.rows])
-#     preds = predict_sales(df, BUNDLE, use_store_weights=True)
-#     return {"predictions": [float(x) for x in preds.tolist()]}
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
