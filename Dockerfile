@@ -21,6 +21,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY app/ ./app/
 COPY src/ ./src/
 
+COPY models/ /app/models/
+
 # ✅ 把前端 build 产物带进最终镜像
 COPY --from=frontend-build /frontend/dist /app/frontend/dist
 
