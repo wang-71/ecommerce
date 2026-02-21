@@ -22,6 +22,7 @@ COPY app/ ./app/
 COPY src/ ./src/
 
 COPY models/ /app/models/
+COPY data/ /app/data/
 
 # ✅ 把前端 build 产物带进最终镜像
 COPY --from=frontend-build /frontend/dist /app/frontend/dist
