@@ -34,4 +34,6 @@ COPY models/ ./models/
 RUN mkdir -p /app/data/raw /app/results
 
 # Railway provides PORT env var; keep your command
-CMD ["sh","-c","gunicorn -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:${PORT:-8000} --workers 1 --timeout 120"]
+COPY start.sh /app/start.sh
+RUN chmod +x /app/start.sh
+CMD ["/app/start.sh"]
